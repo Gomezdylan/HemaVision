@@ -12,6 +12,17 @@ services:
     shm_size: "2gb"
     environment:
       - DB_PATH=/app/db/hemavision.db
+web:
+    image: node:20
+    container_name: hemavision-web
+    working_dir: /web
+    volumes:
+      - .:/web
+      - node-modules:/web/node_modules
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
 
 volumes:
   torch-cache:
+  node-modules:
