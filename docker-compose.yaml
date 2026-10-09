@@ -12,7 +12,7 @@ services:
     shm_size: "2gb"
     environment:
       - DB_PATH=/app/db/hemavision.db
-web:
+  web:
     image: node:20
     container_name: hemavision-web
     working_dir: /web
