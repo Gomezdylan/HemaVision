@@ -30,3 +30,10 @@ db/
 *.pt
 *.pth
 .env
+
+# Python / FastAPI backend
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
