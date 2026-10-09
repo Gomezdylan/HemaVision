@@ -1,0 +1,7 @@
+torch
+torchvision
+grad-cam              # the pytorch-grad-cam library
+opencv-python-headless
+pillow
+numpy
+matplotlib
