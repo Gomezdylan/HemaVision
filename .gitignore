@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# For docker desktop
+data/
+db/
+*.db
+*.pt
+*.pth
+.env
