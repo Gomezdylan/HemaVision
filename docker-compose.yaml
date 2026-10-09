@@ -1,23 +1,17 @@
 services:
   app:
     build: .
+    container_name: hemavision-dev
     ports:
-      - "8000:8000"
+      - "8000:8000"                 # for the results website (adjust to your framework)
     volumes:
-      - .:/app          # live-mount code so edits show up without rebuilding
-    env_file:
-      - .env
-    depends_on:
-      - db
-
-  db:
-    image: postgres:16
+      - .:/app                      # live code edits
+      - ./data:/app/data            # blood smear images (NOT committed)
+      - ./db:/app/db                # SQLite file lives here: db/hemavision.db
+      - torch-cache:/root/.cache/torch   # cached ResNet-18 weights
+    shm_size: "2gb"
     environment:
-      POSTGRES_USER: dev
-      POSTGRES_PASSWORD: dev
-      POSTGRES_DB: project
-    volumes:
-      - db-data:/var/lib/postgresql/data
+      - DB_PATH=/app/db/hemavision.db
 
 volumes:
-  db-data:
+  torch-cache:
