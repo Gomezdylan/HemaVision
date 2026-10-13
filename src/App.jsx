@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -7,13 +8,16 @@ import AnalysisResults from "./components/AnalysisResults";
 import ReviewerFeedback from "./components/ReviewerFeedback";
 
 function App(){
+
+  const [results, setResults] = useState(null); // prediction from image Upload and setResults updates this
+  const [image, setImage] = useState(null);
   return(
     <div>
       <Header />
       <main>
-        <ImageUpload />
-        <ImageComparison />
-        <AnalysisResults />
+        <ImageUpload setResults={setResults} setImage={setImage} />
+        <ImageComparison image={image} />
+        <AnalysisResults results={results} />
         <ReviewerFeedback />
       </main>
 

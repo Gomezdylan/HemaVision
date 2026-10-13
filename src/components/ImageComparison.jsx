@@ -1,18 +1,25 @@
-import gradcamImage from "../assets/gradcam.jpeg";
-import originalImage from "../assets/original.jpeg";
+function ImageComparison ({image}){
 
-function ImageComparison (){
+        let originalImage = null;
+
+        if(image){
+            originalImage = URL.createObjectURL(image);
+        }
     return(
         <div className="image-comparison">
 
         <div className="image-box">
             <h2>Original Image</h2>
-            <img src={originalImage} />
+            { (originalImage) &&
+            <img src = {originalImage} />
+            }
         </div>
 
         <div className="image-box">
             <h2>Grad Cam Image</h2>
-            <img src={gradcamImage} alt="Grad-Cam visualization" />
+            { (originalImage) &&
+            <img src = {originalImage} />
+            } 
         </div>
 
         </div>

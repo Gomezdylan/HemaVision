@@ -1,4 +1,9 @@
-function AnalysisResults(){
+function AnalysisResults( { results } ){ // gets information back from image upload and fastapi now
+
+    // eventually need to reorder them too
+    if(!results){
+        return <p></p>;
+    }
     return(
         <div className="analysis-results">
 
@@ -8,43 +13,43 @@ function AnalysisResults(){
                 <div className="probability">
                     <div className="probability-label">
                         <span>Neutrophil:</span> 
-                        <span>92%</span> 
+                        <span>{results.probabilities.Neutrophil * 100}%</span> 
                     </div>
                     <div className="bar">
-                        <div className="bar-fill" style={{ width: "92%" }}></div>
+                        <div className="bar-fill" style={{ width: `${results.probabilities.Neutrophil * 100}%` }}></div>
                     </div>
                 </div>
 
                 <div className="probability">
                     <div className="probability-label">
                         <span>Eosinophil:</span>
-                        <span>4%</span>
+                        <span>{results.probabilities.Eosinophil * 100}%</span>
                     </div>
 
                     <div className="bar">
-                        <div className="bar-fill" style={{ width: "4%" }}></div>
+                        <div className="bar-fill" style={{ width: `${results.probabilities.Eosinophil * 100}%` }}></div>
                     </div>
                 </div>
 
                 <div className="probability">
                     <div className="probability-label">
                         <span>Monocyte:</span>
-                        <span>2%</span>
+                        <span>{results.probabilities.Monocyte * 100}%</span>
                     </div>
 
                     <div className="bar">
-                        <div className="bar-fill" style={{ width: "2%" }}></div>
+                        <div className="bar-fill" style={{ width: `${results.probabilities.Monocyte * 100}%` }}></div>
                     </div>
                 </div>
 
                 <div className="probability">
                     <div className="probability-label">
                         <span>Lymphocyte:</span>
-                        <span>2%</span>
+                        <span>{results.probabilities.Lymphocyte * 100}%</span>
                     </div>
 
                     <div className="bar">
-                        <div className="bar-fill" style={{ width: "2%" }}></div>
+                        <div className="bar-fill" style={{ width: `${results.probabilities.Lymphocyte * 100}%` }}></div>
                     </div>
                 </div>
 
