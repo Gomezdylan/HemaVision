@@ -16,9 +16,16 @@ function App(){
       <Header />
       <main>
         <ImageUpload setResults={setResults} setImage={setImage} />
-        <ImageComparison image={image} />
-        <AnalysisResults results={results} />
-        <ReviewerFeedback />
+        {image && ( // Changed to this so it only changes the look of the screen after someone uploads an image
+          <>
+          
+          <ImageComparison image={image} />
+          <AnalysisResults results={results} />
+          <ReviewerFeedback />
+
+        </>
+
+        )}
       </main>
 
       <Footer />

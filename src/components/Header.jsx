@@ -1,13 +1,14 @@
-import HemaLogo from "../assets/hemavision-logo.png";
+import bloodDrop from "../assets/blood-drip7.png";
 
 function Header() {
     return(
         <header className="header">
-            <img
-                src={HemaLogo}
-                className="logo"
-            
-            />
+            <div className="logo">
+                <img
+                    src={bloodDrop}
+                />
+                <div>Hema<span>vision</span></div>
+            </div>
 
             <nav className="tabs">
                 <button>About</button>

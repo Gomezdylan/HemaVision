@@ -2,28 +2,34 @@
   margin-left: auto;
   margin-right: auto;
   justify-content: space-between;
-  background-color: rgb(190, 151, 199);
+  background: #4C2876;  /* change this */ 
   align-items: center;
   display: flex;
-  border-bottom: 2px solid rgba(182, 108, 193, 0.2);
-  padding: 10px;
+  /* border-bottom: 2px solid rgba(182, 108, 193, 0.2); */
+  padding: 20px;
   
 }
-.vision {
-  color:rgb(192, 99, 190);
+/* */
+.logo span{
+  color:#f57de3;
   font-weight: 800;
 }
 .logo{
-  background-color:rgb(95, 47, 165);
   color: white;
   width: 150px;
-  height: auto;
+  gap: 10px;
+  align-items: center;
 
   font-size: 30px;
   font-weight: bold;
-  padding: 15px 20px;
+  display: flex;
   border-radius: 8px;
-  margin-left: 10px;
+  margin-left: 20px;
+}
+.logo img{
+  width: 50 px;
+  height: 50px;
+  border-radius: 50%;
 }
 .tabs{
   display: flex;
@@ -53,20 +59,64 @@
 }
 main {
   min-height: 100vh;
-  background-color: rgb(226, 214, 229);
+  background: linear-gradient( /*might keep this*/
+    180deg,
+    #4C2876 0%,
+    #70408D 15%,
+    #A976B1 35%,
+    #D6B8D8 55%,
+    #F3ECF5 75%
+  );
+
   padding-top: 20px;
 }
 .image-upload{
-  width: 80%;
+  width: 70%;
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
   padding: 40px;
   text-align: center;
 
-  border: 1px solid rgba(95, 47, 165, 0.2);
-  border-radius: 15px;
+  background-color: white;
+  border: 10px solid white;
+  outline: 2px dashed #C9B3DC;;
+  outline-offset: -25px;
+  border-radius: 20px;
 }
+
+.upload-Mnt{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.image-upload h2{
+  color: #43235F;
+}
+
+.image-upload p{
+  color: #82758C;
+  margin-bottom: 10px;
+}
+
+.image-upload input[type="file"]{
+  color: #82758C;
+  font-size: 14px;
+}
+
+.image-upload input[type="file"]::file-selector-button {
+  background-color: #70408D;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 12px;
+}
+/*Need to add a hover to all the buttons including this one ^ */
 
 .image-comparison{
   display: flex;
@@ -122,6 +172,7 @@ main {
   margin-right: auto;
   box-sizing: border-box;
   border: 1px solid rgba(95, 47, 165, 0.2);
+  color: #382044;
 }
 
 .feedback-question{

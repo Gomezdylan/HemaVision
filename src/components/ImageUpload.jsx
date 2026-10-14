@@ -1,6 +1,9 @@
+import mountainUpload from "../assets/mountainUpload.jpeg";
 function ImageUpload( {setResults, setImage} ){
     return(
         <div className="image-upload">
+
+            <img src={mountainUpload} className="upload-Mnt" />
             <h2>
                 Upload Image
             </h2>
