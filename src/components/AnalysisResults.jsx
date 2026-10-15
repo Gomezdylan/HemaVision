@@ -55,12 +55,7 @@ function AnalysisResults( { results } ){ // gets information back from image upl
 
             </div>
 
-            <div className="result-box">
 
-                <h2>Explainable AI</h2>
-
-                <p>The model primarily focused on the central white blood cell when making its prediction. The Grad-CAM visualization highlights regions that contributed most strongly to the classification. Warmer colors indicate areas with greater influence on the model's decision....</p>
-            </div>
         </div>
     );
 }
