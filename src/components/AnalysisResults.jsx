@@ -55,9 +55,6 @@ function AnalysisResults( { results } ){ // gets information back from image upl
 
             </div>
 
-            <div className="result-box">
-
-                <h2>Explainable AI</h2>
 
                 {results.heatmap && (
                     <img src={results.heatmap} alt="Grad-CAM heatmap" className="heatmap-image" />
