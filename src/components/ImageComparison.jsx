@@ -1,4 +1,4 @@
-function ImageComparison ({image}){
+function ImageComparison ({image, results}){
 
         let originalImage = null;
 
@@ -17,9 +17,9 @@ function ImageComparison ({image}){
 
         <div className="image-box">
             <h2>Grad Cam Image</h2>
-            { (originalImage) &&
-            <img src = {originalImage} />
-            } 
+            { (results && results.heatmap) &&
+            <img src = {results.heatmap} />
+            }
         </div>
 
         </div>
