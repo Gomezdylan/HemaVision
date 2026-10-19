@@ -7,3 +7,4 @@ db/
 *.pt
 *.pth
 .env
+node_modules/

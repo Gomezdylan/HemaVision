@@ -12,6 +12,7 @@ services:
     shm_size: "2gb"
     environment:
       - DB_PATH=/app/db/hemavision.db
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
   web:
     image: node:20
     container_name: hemavision-web

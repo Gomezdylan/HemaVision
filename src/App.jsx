@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ImageUpload from "./components/ImageUpload";
 import ImageComparison from "./components/ImageComparison";
+import HeatmapUploader from "./components/HeatmapUploader";
 import AnalysisResults from "./components/AnalysisResults";
 import ReviewerFeedback from "./components/ReviewerFeedback";
 
@@ -19,7 +20,7 @@ function App(){
         {image && ( // Changed to this so it only changes the look of the screen after someone uploads an image
           <>
           
-          <ImageComparison image={image} />
+          <ImageComparison image={image} results={results}/>
           <AnalysisResults results={results} />
           <ReviewerFeedback />
 
