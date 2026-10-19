@@ -63,9 +63,19 @@
   transform: translateY(-3px);
 }
 .footer{
-  border-top: 2px solid rgba(182, 108, 193, 0.2);
-  background-color:rgb(188, 157, 196);
-  display: flex
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#4e306c;
+  padding: 1px 28px;
+}
+.footer-info{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.footer-info h3{
+  color:rgb(252, 252, 253)
 }
 main {
   min-height: 88vh;
