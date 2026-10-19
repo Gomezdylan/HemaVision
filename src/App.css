@@ -37,28 +37,48 @@
   margin-right: 40px; 
 }
 .tabs button{
-  background-color:rgb(95, 47, 165);
+  background-color:#70408D;
   color: white;
-  border: none;
-  border-radius: 12px;
-  padding: 15px 25px;
+  border: 1px solid #C69ADD;
+  border-radius: 10px;
+  padding: 12px 24px;
   font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
   cursor: pointer;
   transition: 0.2s;
 
 }
-
+.tabs button img{
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
 .tabs button:hover{
-  background-color:rgb(130, 106, 165);
+  background-color:#9256b5;
+  transform: translateY(-3px);
 }
 .footer{
-  border-top: 2px solid rgba(182, 108, 193, 0.2);
-  background-color:rgb(188, 157, 196);
-  display: flex
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#4e306c;
+  padding: 1px 28px;
+}
+.footer-info{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.footer-info h3{
+  color:rgb(252, 252, 253)
 }
 main {
-  min-height: 100vh;
+  min-height: 88vh;
   background: linear-gradient( /*might keep this*/
     180deg,
     #4C2876 0%,
@@ -77,6 +97,7 @@ main {
   margin-right: auto;
   padding: 40px;
   text-align: center;
+  margin-top: 10px;
 
   background-color: white;
   border: 10px solid white;
@@ -106,7 +127,7 @@ main {
 }
 
 .image-upload input[type="file"]::file-selector-button {
-  background-color: #70408D;
+  background-color: #6c308f;
   color: white;
   border: none;
   border-radius: 8px;
@@ -116,8 +137,35 @@ main {
   cursor: pointer;
   margin-right: 12px;
 }
+.image-upload input[type="file"]::file-selector-button:hover {
+  background-color: #9259B3;
+  transform: translateY(-1px);
+}
 /*Need to add a hover to all the buttons including this one ^ */
 
+.waiting-card{
+  width: 70%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+  text-align: center;
+  margin-top: 20px;
+
+  background-color: white;
+  border: 10px solid white;
+  border-radius: 20px;
+}
+.waiting-card img{
+  width: 75px;
+  height: 65px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.waiting-card h2{
+  color: #43235F;
+}
 .image-comparison{
   display: flex;
   justify-content: center;

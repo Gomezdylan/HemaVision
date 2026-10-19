@@ -1,10 +1,13 @@
 function Footer(){
     return(
-        <nav className="footer">
-            <p style={{ color: "white", fontSize: "18px" }}>
-              A Capstone Project (Dylan Gomez, Ananda Shrestha, Lainey Brekken, Breana Sinipete) 
-            </p>
-        </nav>
+        <div className="footer">
+            <div className="footer-info">
+                <h3>Hemavision ⋅ 2026</h3>
+                <p>A Capstone Project ⋅ Dylan Gomez, Ananda Shrestha, Lainey Brekken, Breana Sinipete</p>
+            </div>
+
+            <h3>Github</h3>
+        </div>
     );
 }
 

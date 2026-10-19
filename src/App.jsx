@@ -7,6 +7,7 @@ import ImageComparison from "./components/ImageComparison";
 import HeatmapUploader from "./components/HeatmapUploader";
 import AnalysisResults from "./components/AnalysisResults";
 import ReviewerFeedback from "./components/ReviewerFeedback";
+import WaitingCard from "./components/WaitingCard";
 
 function App(){
 
@@ -17,6 +18,8 @@ function App(){
       <Header />
       <main>
         <ImageUpload setResults={setResults} setImage={setImage} />
+
+        {!results && <WaitingCard/>}
         {image && ( // Changed to this so it only changes the look of the screen after someone uploads an image
           <>
           
