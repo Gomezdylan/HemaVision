@@ -8,13 +8,14 @@ import HeatmapUploader from "./components/HeatmapUploader";
 import AnalysisResults from "./components/AnalysisResults";
 import ReviewerFeedback from "./components/ReviewerFeedback";
 import WaitingCard from "./components/WaitingCard";
+import CellCard from "./components/CellCard";
 
 function App(){
 
   const [results, setResults] = useState(null); // prediction from image Upload and setResults updates this
   const [image, setImage] = useState(null);
   return(
-    <div>
+    <div className="app">
       <Header />
       <main>
         <ImageUpload setResults={setResults} setImage={setImage} />
@@ -23,8 +24,7 @@ function App(){
         {image && ( // Changed to this so it only changes the look of the screen after someone uploads an image
           <>
           
-          <ImageComparison image={image} results={results}/>
-          <AnalysisResults results={results} />
+          <CellCard image={image} results={results} />
           <ReviewerFeedback />
 
         </>
