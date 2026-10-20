@@ -15,6 +15,7 @@ function ReviewerFeedback(){
                         value="agree"
                     
                     />
+                    <span className="feedback-icon"> ✓ </span>
                     Agree
                 </label>
 
@@ -25,16 +26,30 @@ function ReviewerFeedback(){
                         value="disagree"
                     
                     />
+                    <span className="feedback-icon"> ✕ </span>
                     Disagree
                 </label>
             </div>
 
-            <div className="reviewer">
-                <label>Reviewer</label>
+            <div className="reviewer-name">
+                <label htmlFor="reviewer">Reviewer</label>
+                <input 
+                    type="text"
+                    id="reviewer"
+                    name="reviewer"
+                    placeholder="Enter reviewer name"
+                
+                />
 
-                <select>
-                    <option>Dr Andrews</option>
-                </select>
+            </div>
+            <div className="reviewer-comments">
+                <label htmlFor="comments">Comments</label>
+                <textarea 
+                    id="comments"
+                    name="comments"
+                    rows="4"
+                    placeholder="Enter any additional feedback about the prediction..."
+                />
             </div>
         </div>
     );

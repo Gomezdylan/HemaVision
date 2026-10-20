@@ -18,7 +18,7 @@ function AnalysisResults( { results } ){ // gets information back from image upl
                 <div className="probability" key={cellType}>
                     <div className="probability-label">
                         <span>{cellType}:</span> 
-                        <span>{probability * 100}%</span> 
+                        <span>{(probability * 100).toFixed(2)}%</span> 
                     </div>
                     <div className="bar">
                         <div className="bar-fill" style={{ width: `${probability * 100}%` }}></div>

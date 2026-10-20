@@ -9,6 +9,7 @@ import AnalysisResults from "./components/AnalysisResults";
 import ReviewerFeedback from "./components/ReviewerFeedback";
 import WaitingCard from "./components/WaitingCard";
 import CellCard from "./components/CellCard";
+import DownloadReport from "./components/DownloadReport";
 
 function App(){
 
@@ -26,6 +27,7 @@ function App(){
           
           <CellCard image={image} results={results} />
           <ReviewerFeedback />
+          <DownloadReport />
 
         </>
 

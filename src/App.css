@@ -131,7 +131,7 @@ main {
   margin-right: auto;
   padding: 40px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 50px;
 
   background-color: white;
   border: 10px solid white;
@@ -165,11 +165,16 @@ main {
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 12px 22px;
+  padding: 12px 22px 12px 35px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   margin-right: 12px;
+
+  background-image: url("./assets/lilmtn.png");
+  background-repeat: no-repeat;
+  background-size: 25px 20px;
+  background-position: 10px center;
 }
 .image-upload input[type="file"]::file-selector-button:hover {
   background-color: #9259B3;
@@ -237,7 +242,9 @@ main {
 
 .image-box img{
   width: 100%;
-  height: auto;
+  height: 300px;
+  object-fit: cover;
+  display: block;
 }
 .analysis-results{
   display: flex;
@@ -296,12 +303,118 @@ main {
   justify-content: left;
   gap: 40px;
 }
-
-.reviewer{
+.feedback-choice input[type="radio"]{
+  position: absolute;
+  opacity: 0;
+}
+.feedback-icon{
+  font-size: 14px;
+}
+.feedback-choice label{
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px 20px;
+  outline: 1px solid rgb(133, 76, 133);
+  cursor: pointer;
   display: flex;
-  justify-content: left;
   align-items: center;
-  gap: 60px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  gap: 14px;
+}
+.feedback-choice label:has(input:checked){
+  background-color: #eee3f6;
+  outline: 2px solid #633c87;
+}
+
+.reviewer-name{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.reviewer-name label{
+  color: #43235F;
+}
+.reviewer-name input{
+  box-sizing: border-box;
+  width: 280px;
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #82758C;
+  background: white;
+  resize: vertical;
+  border: 1px solid #633c87;
+}
+.reviewer-name input:focus {
+  outline: none;
+  border-color: #633c87;
+}
+.reviewer label{
+  color: #43235F;
+}
+
+.reviewer-comments{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.reviewer-comments label{
+  color: #43235F;
+}
+.reviewer-comments textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #82758C;
+  background: white;
+  resize: vertical;
+}
+.reviewer-comments textarea:focus {
+  outline: none;
+  border-color: #633c87;
+}
+.report-box{
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 80px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px;
+  text-align: left;
+}
+.report-box h2{
+  color: #43235F;
+}
+.report-box p{
+  font-size: 15px;
+  color: #82758C;
+}
+.report-box button{
+  background-color: #6c308f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.report-box button:hover {
+  background-color: #9259B3;
+  transform: translateY(-1px);
+}
+.report-box button img{
+  width: 20px;
+  height: auto;
+  margin-right: 4px;
 }
