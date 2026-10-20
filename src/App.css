@@ -227,6 +227,7 @@ main {
 }
 
 .image-box {
+  flex: 1; /*share the same size image*/
   box-sizing: border-box;
   background-color:rgb(235, 231, 239)
 }
