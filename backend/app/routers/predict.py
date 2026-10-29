@@ -1,8 +1,9 @@
+import io
+import hashlib
+
 from fastapi import APIRouter,FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from backend.app.services.image_upload import validate_image, image_to_base64_png
-
-import io
 
 ##importing sample model
 import numpy as np
@@ -14,6 +15,9 @@ from torchvision.models import ResNet18_Weights, resnet18
 ##importing heatmap
 from explainability.gradcam import generate_heatmap
 from explainability.overlay import overlay_heatmap
+
+#importing database
+from backend.app.database.queries import save_run
 
 
 router = APIRouter()
@@ -73,7 +77,13 @@ async def predict(file: UploadFile = File(...)):
     grayscale_cam = generate_heatmap(model, input_tensor, TARGET_LAYERS, target_class=pred_class)
     heatmap_overlay = overlay_heatmap(rgb_img, grayscale_cam)
 
-
+    model_version = "placeholder-resnet18-imagenet"
+    run_id = save_run(
+        image_hash = hashlib.sha256(image_bytes).hexdigest(),
+        model_version = model_version,
+        prediction = CATEGORIES[pred_class],
+        probabilities=probabilities
+    )
     # Temporary mock results
     return {
         #"prediction": "Neutrophil",
@@ -85,8 +95,9 @@ async def predict(file: UploadFile = File(...)):
         #},
         #"heatmap": None,
         #"model_version": "mock-v1"
+        "run_id": run_id,
         "prediction": CATEGORIES[pred_class],
         "probabilities": probabilities,
         "heatmap": image_to_base64_png(heatmap_overlay),
-        "model_version": "placeholder-resnet18-imagenet"
+        "model_version": model_version
     }
