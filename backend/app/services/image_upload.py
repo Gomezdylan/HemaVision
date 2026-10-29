@@ -15,7 +15,7 @@ def validate_image(image_bytes: bytes, content_type: str):
             detail="Please upload a JPG or PNG image."
         )
 
-    # Check that the image can actually be decoded
+    # Check if the image can actually be decoded
     try:
         img = Image.open(io.BytesIO(image_bytes))
 
@@ -42,3 +42,4 @@ def image_to_base64_png(img_array: np.ndarray) -> str:
     pil_img.save(buf, format="PNG")
     encoded = base64.b64encode(buf.getvalue()).decode("utf-8")
     return f"data:image/png;base64,{encoded}"
+#
