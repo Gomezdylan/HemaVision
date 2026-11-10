@@ -28,7 +28,11 @@ def save_run(image_hash, model_version, prediction, probabilities):
 def get_runs():
     with get_connection() as conn:
         rows = conn.execute(
-            "SELECT * FROM runs ORDER BY timestamp DESC, id DESC"
+            """ 
+            SELECT * FROM runs
+            ORDER BY 
+            timestamp DESC, id DESC
+            """
         ).fetchall()
 
         runs = [dict(row) for row in rows]

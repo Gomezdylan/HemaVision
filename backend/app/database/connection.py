@@ -21,6 +21,6 @@ def initialize_database():
                 prediction TEXT NOT NULL,
                 probs TEXT NOT NULL,
                 review TEXT,
-                comments, TEXT
+                comments TEXT
             )
         """)
