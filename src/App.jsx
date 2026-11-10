@@ -10,15 +10,20 @@ import ReviewerFeedback from "./components/ReviewerFeedback";
 import WaitingCard from "./components/WaitingCard";
 import CellCard from "./components/CellCard";
 import DownloadReport from "./components/DownloadReport";
+import Log from "./components/Log";
 
 function App(){
 
   const [results, setResults] = useState(null); // prediction from image Upload and setResults updates this
   const [image, setImage] = useState(null);
+  const [page, setPage] = useState("analysis"); // Current page
   return(
     <div className="app">
-      <Header />
-      <main>
+      <Header setPage={setPage} /> 
+
+      <main> 
+        {page === "analysis" && ( // Main Page Code
+          <>
         <ImageUpload setResults={setResults} setImage={setImage} />
 
         {!results && <WaitingCard/>}
@@ -29,12 +34,15 @@ function App(){
           <ReviewerFeedback />
           <DownloadReport />
 
-        </>
-
+              </>
+            )}
+          </>
         )}
+
+        {page === "history" && <Log />}
       </main>
 
-      <Footer />
+      <Footer /> 
 
     </div>
   );

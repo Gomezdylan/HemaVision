@@ -1,7 +1,9 @@
 import bloodDrop from "../assets/blood-drip7.png";
 import headerblood from "../assets/blood-dropHeader.png";
 import headerclock from "../assets/blood-dropHeader2.png";
-function Header() {
+function Header({ setPage }) { // Prop pass so we can change the page in header
+
+    // Still need to add prop so the about page can load from header
     return(
         <header className="header">
             <div className="logo">
@@ -12,11 +14,11 @@ function Header() {
             </div>
 
             <nav className="tabs">
-                <button>
+                <button onClick={() => setPage("about")}> 
                     <img src={headerblood} />
                     About
                 </button>
-                <button>
+                <button onClick={() => setPage("history")}>
                     <img src={headerclock} />
                     History
                 </button>
