@@ -6,12 +6,16 @@ function Header({ setPage }) { // Prop pass so we can change the page in header
     // Still need to add prop so the about page can load from header
     return(
         <header className="header">
-            <div className="logo">
+            <button 
+                className="logo"
+                type="button"
+                onClick={() => setPage("analysis")}
+                >
                 <img
                     src={bloodDrop}
                 />
                 <div>Hema<span>vision</span></div>
-            </div>
+            </button>
 
             <nav className="tabs">
                 <button onClick={() => setPage("about")}> 

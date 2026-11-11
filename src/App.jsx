@@ -31,7 +31,11 @@ function App(){
           <>
           
           <CellCard image={image} results={results} />
-          <ReviewerFeedback />
+          <ReviewerFeedback 
+            key={results?.run_id}
+            runID={results?.run_id}
+          
+          />
           <DownloadReport />
 
               </>
