@@ -8,31 +8,45 @@ import HeatmapUploader from "./components/HeatmapUploader";
 import AnalysisResults from "./components/AnalysisResults";
 import ReviewerFeedback from "./components/ReviewerFeedback";
 import WaitingCard from "./components/WaitingCard";
+import CellCard from "./components/CellCard";
+import DownloadReport from "./components/DownloadReport";
+import Log from "./components/Log";
 
 function App(){
 
   const [results, setResults] = useState(null); // prediction from image Upload and setResults updates this
   const [image, setImage] = useState(null);
+  const [page, setPage] = useState("analysis"); // Current page
   return(
-    <div>
-      <Header />
-      <main>
+    <div className="app">
+      <Header setPage={setPage} /> 
+
+      <main> 
+        {page === "analysis" && ( // Main Page Code
+          <>
         <ImageUpload setResults={setResults} setImage={setImage} />
 
         {!results && <WaitingCard/>}
         {image && ( // Changed to this so it only changes the look of the screen after someone uploads an image
           <>
           
-          <ImageComparison image={image} results={results}/>
-          <AnalysisResults results={results} />
-          <ReviewerFeedback />
+          <CellCard image={image} results={results} />
+          <ReviewerFeedback 
+            key={results?.run_id}
+            runID={results?.run_id}
+          
+          />
+          <DownloadReport />
 
-        </>
-
+              </>
+            )}
+          </>
         )}
+
+        {page === "history" && <Log />}
       </main>
 
-      <Footer />
+      <Footer /> 
 
     </div>
   );

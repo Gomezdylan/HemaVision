@@ -1,11 +1,10 @@
 .header{
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  box-sizing: border-box;
   justify-content: space-between;
   background: #4C2876;  /* change this */ 
   align-items: center;
   display: flex;
-  /* border-bottom: 2px solid rgba(182, 108, 193, 0.2); */
   padding: 20px;
   
 }
@@ -16,9 +15,10 @@
 }
 .logo{
   color: white;
-  width: 150px;
   gap: 10px;
   align-items: center;
+  background: transparent;
+  border: none;
 
   font-size: 30px;
   font-weight: bold;
@@ -26,8 +26,13 @@
   border-radius: 8px;
   margin-left: 20px;
 }
+.logo:hover {
+  background: transparent;
+  transform: translateY(-3px);
+  background-color: rgba(255, 255, 255, 0.12);
+}
 .logo img{
-  width: 50 px;
+  width: 50px;
   height: 50px;
   border-radius: 50%;
 }
@@ -66,8 +71,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:#4e306c;
-  padding: 1px 28px;
+  background-color: #654188;
+  padding: 8px 28px;
 }
 .footer-info{
   display: flex;
@@ -75,10 +80,45 @@
   text-align: left;
 }
 .footer-info h3{
-  color:rgb(252, 252, 253)
+  color:rgb(252, 252, 253);
+  font-size: 20px;
+}
+.footer-info p{
+  color: #D9C4E5;
+  font-size: 15px;
+}
+.github-link{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.github-link:hover{
+  opacity: 0.75;
+}
+.github-link h3{
+  color:rgb(252, 252, 253);
+  font-size: 20px;
+}
+.github-link .github-cat{
+  height: 40px;
+  width: 40px;
+}
+.github-link .external-icon{
+  height: 20px;
+  width: 20px;
+}
+.app{ 
+  /*Needed this section so the website could grow*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
 }
 main {
-  min-height: 88vh;
+  flex: 1; /*Fills up the remaining space in main between header and footer*/
+  height: auto;
   background: linear-gradient( /*might keep this*/
     180deg,
     #4C2876 0%,
@@ -90,6 +130,7 @@ main {
 
   padding-top: 20px;
 }
+
 .image-upload{
   width: 70%;
   box-sizing: border-box;
@@ -97,7 +138,7 @@ main {
   margin-right: auto;
   padding: 40px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 50px;
 
   background-color: white;
   border: 10px solid white;
@@ -131,17 +172,23 @@ main {
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 12px 22px;
+  padding: 12px 22px 12px 35px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   margin-right: 12px;
+
+  background-image: url("./assets/lilmtn.png");
+  background-repeat: no-repeat;
+  background-size: 25px 20px;
+  background-position: 10px center;
 }
 .image-upload input[type="file"]::file-selector-button:hover {
   background-color: #9259B3;
   transform: translateY(-1px);
 }
 /*Need to add a hover to all the buttons including this one ^ */
+
 
 .waiting-card{
   width: 70%;
@@ -166,20 +213,45 @@ main {
 .waiting-card h2{
   color: #43235F;
 }
+.cell-classification{
+  background-color: white;
+  border-radius: 20px;
+  padding: 24px;
+
+  width: 70%;
+  box-sizing: border-box;
+  margin: 20px auto;
+}
+.cell-classification h2{
+  text-align: left;
+  color: #43235F;
+}
+.cell-classification p{
+  text-align: left;
+  font-size: 15px;
+  color: #82758C;
+}
 .image-comparison{
   display: flex;
   justify-content: center;
-  padding: 40px;
-  gap: 60px;
+  padding: 20px;
+  gap: 15px;
 }
 
 .image-box {
-  width: 35%;
+  flex: 1; /*share the same size image*/
+  box-sizing: border-box;
+  background-color:rgb(235, 231, 239)
+}
+.image-box h2{
+  text-align: center;
 }
 
 .image-box img{
   width: 100%;
-  height: auto;
+  height: 300px;
+  object-fit: cover;
+  display: block;
 }
 .analysis-results{
   display: flex;
@@ -189,7 +261,7 @@ main {
 }
 
 .result-box{
-  width: 40%;
+  width: 100%;
   border: 1px solid rgba(95, 47, 165, 0.2);
   border-radius: 12px;
   padding: 5px;
@@ -214,13 +286,19 @@ main {
 
 .reviewer-feedback{
   width: 70%;
-  padding: 10px;
-  text-align: center;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
   box-sizing: border-box;
-  border: 1px solid rgba(95, 47, 165, 0.2);
+  background-color: white;
+  border-radius: 20px;
+  padding: 24px;
   color: #382044;
+}
+.reviewer-feedback h2{
+  text-align: left;
+  color: #43235F;
 }
 
 .feedback-question{
@@ -229,15 +307,203 @@ main {
 
 .feedback-choice{
   display: flex;
-  justify-content: center;
-  gap: 60px;
+  justify-content: left;
+  gap: 40px;
+}
+.feedback-choice input[type="radio"]{
+  position: absolute;
+  opacity: 0;
+}
+.feedback-icon{
+  font-size: 14px;
+}
+.feedback-choice label{
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px 20px;
+  outline: 1px solid rgb(133, 76, 133);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.feedback-choice label:has(input:checked){
+  background-color: #eee3f6;
+  outline: 2px solid #633c87;
 }
 
-.reviewer{
+.reviewer-name{
+  margin-top: 30px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.reviewer-name label{
+  color: #43235F;
+}
+.reviewer-name input{
+  box-sizing: border-box;
+  width: 280px;
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #82758C;
+  background: white;
+  resize: vertical;
+  border: 1px solid #633c87;
+}
+.reviewer-name input:focus {
+  outline: none;
+  border-color: #633c87;
+}
+.reviewer label{
+  color: #43235F;
+}
+
+.reviewer-comments{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.reviewer-comments label{
+  color: #43235F;
+}
+.reviewer-comments textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #82758C;
+  background: white;
+  resize: vertical;
+}
+.reviewer-comments textarea:focus {
+  outline: none;
+  border-color: #633c87;
+}
+.report-box{
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 80px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px;
+  text-align: left;
+}
+.report-box h2{
+  color: #43235F;
+}
+.report-box p{
+  font-size: 15px;
+  color: #82758C;
+}
+.report-box button{
+  background-color: #6c308f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.report-box button:hover {
+  background-color: #9259B3;
+  transform: translateY(-1px);
+}
+.report-box button img{
+  width: 20px;
+  height: auto;
+  margin-right: 4px;
+}
+.run-history{
+  width: 80%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  margin-top: 50px;
+
+  background-color: white;
+  border: 10px solid white;
+  border-radius: 20px;
+}
+.run-history h2{
+  text-align: left;
+  color: #43235F;
+  font-size: 30px;
+  font-weight: 700;
+}
+.run-history p{
+  text-align: left;
+  font-size: 15px;
+  color: #6b517e;
+}
+.history-container{ 
+  margin-top: 24px;
+  border-radius: 20px;
+  border: 1px solid #d6c5e8;
+  overflow-x: auto;
+  /* Migth need padding here. also overflow is just in case i need extra width to scroll migth get rid of it too*/
+}
+.history-table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.history-table th{
+  padding: 12px 16px;
+  text-align: left;
+  background-color:rgb(221, 193, 239);
+  color: #43235F;
+}
+.history-table td{
+  padding: 12px 16px;
+  text-align: left;
+  color: #43235F;
+}
+.history-table tbody tr:nth-child(odd){
+  background-color: white;
+}
+.history-table tbody tr:nth-child(even){
+  background-color: #f5effa;
+}
+.view-btn{
+  background-color: white;
+  color: #6c308f;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 10px 20px 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.view-btn:not(:disabled):hover{
+  background-color: #a88ab8;
+  transform: translateY(-2px);
+}
+.page-scroll{
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  gap: 60px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  gap: 15px;
+  margin-top: 10px;
+  color: #43235F;
+}
+.view-btn:disabled{
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+}
+.run-details{
+  text-align: left;
 }

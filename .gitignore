@@ -29,6 +29,8 @@ db/
 *.db
 *.pt
 *.pth
+!models/
+!models/hemavision_resnet18_v1_best.pth
 .env
 
 # Python / FastAPI backend
