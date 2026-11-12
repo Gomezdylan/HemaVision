@@ -41,7 +41,7 @@ function Log(){
     }
 
     function cleanTime(timestamp){
-        const date = new Date(timestamp.replace(" ", "T"));
+        const date = new Date(timestamp.replace(" ", "T") + "Z"); // Makign it our timezone
 
         return date.toLocaleString("en-US", {
             month: "short",
@@ -71,7 +71,7 @@ function Log(){
                     <tbody>
                         {visibleRuns.map((run) =>(
                         
-                        <tr key={run.run_id}>
+                        <tr key={run.id}>
                             <td>{run.id}</td>
                             <td>{cleanTime(run.timestamp)}</td>
                             <td>{run.prediction}</td>
